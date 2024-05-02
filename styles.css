@@ -1,0 +1,54 @@
+/* Estilos base */
+body {
+    background-color: #800080; /* Color morado */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+}
+
+header p {
+    margin-bottom: 20px;
+}
+
+#gallery {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.imagen {
+    width: 100%; /* Imágenes ocupan todo el ancho */
+    max-width: 300px; /* Máximo ancho de 300px */
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Transición suave al cambiar el tamaño */
+    opacity: 0; /* Ocultar todas las imágenes */
+}
+
+.imagen.visible {
+    opacity: 1; /* Mostrar la imagen actual */
+}
+
+footer {
+    padding: 20px 0;
+}
+
+/* Media queries para adaptar el diseño a diferentes tamaños de pantalla */
+@media screen and (min-width: 768px) {
+    /* Para pantallas más grandes que 768px de ancho */
+    #gallery {
+        padding: 20px 40px; /* Aumentar el padding para pantallas más grandes */
+    }
+    .imagen {
+        width: calc(33.33% - 40px); /* 3 imágenes por fila, con 20px de espacio entre ellas */
+        max-width: none;
+    }
+}
